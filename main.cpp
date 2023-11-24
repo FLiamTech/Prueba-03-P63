@@ -1,27 +1,40 @@
 #include <iostream>
-#include "libro.h"
-#include "articulo.h"
+#include "bibliografia.h"
 
 using namespace std;
 
 int main()
 {
-    cout << "= = PRUEBA 2 = =" << endl;
-    cout << "Autor: Rodrigo Tufiño" << endl;
+    int op;
+    Bibliografia blb;
+    do{
+        cout<<"1. Agregar un Libro"<<endl;
+        cout<<"2. Agregar un Articulo"<<endl;
+        cout<<"3. Mostrar Referencias"<<endl;
+        cout<<"4. Salir"<<endl;
+        do
+        {
+            cout<<"Ingrese la opcion: ";
+            cin>>op;
+            if(op < 0 || op > 4)
+            {
+                cout<<"Error..."<<endl;
+            }
+        }while(op < 0 || op > 4);
+        switch(op){
+        case 1:
+            blb.agregarLibro();
+            break;
+        case 2:
+            blb.agregarArticulo();
+            break;
+        case 3:
+            blb.imprimirReferencias();
+            break;
+        }
+    }while(op!=4);
 
-    Libro doc(2,"McGraw Hill", "C++ Programming: An Object-Oriented Approach");
-    doc.agregarAutor("Forouza B.");
-    doc.agregarAutor("Gilberg R.");
-    doc.setPaginas(960);
-    cout << doc.obtenerReferencia() << endl;
 
-    Articulo art(5, "Intelligent Human Systems Integration 2021: Proceedings of the 4th International Conference on Intelligent Human Systems Integration (IHSI 2021)","Integrating People and Intelligent Systems");
-    art.agregarAutor("Sebastián Valladares");
-    art.agregarAutor("Mayerly Toscano");
-    art.agregarAutor("Rodrigo Tufiño");
-    art.agregarAutor("Paulina Morillo");
-    art.agregarAutor("Diego Vallejo-Huanga");
-    art.setJournal(false);
-    cout << art.obtenerReferencia() << endl;
+
     return 0;
 }

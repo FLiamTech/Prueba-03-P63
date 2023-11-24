@@ -24,7 +24,8 @@ bool Documento::agregarAutor(string nombre)
 string Documento::obtenerReferencia()
 {
     string str = "";
-    for(string s: autores){
+    for(string s: autores)
+    {
         str += s + ", ";
     }
     return str;

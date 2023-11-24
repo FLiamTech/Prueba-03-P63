@@ -13,9 +13,9 @@ void Libro::setPaginas(int newPaginas)
 string Libro::obtenerReferencia()
 {
     return Documento::obtenerReferencia() +
-            titulo + ", " +
-            this->publicacion + ", " +
-            to_string(paginas) + " pags. ";
+           titulo + ", " +
+           this->publicacion + ", " +
+           to_string(paginas) + " pags. ";
 }
 
 Libro::Libro()

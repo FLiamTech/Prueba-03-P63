@@ -13,9 +13,9 @@ void Articulo::setJournal(bool newJournal)
 string Articulo::obtenerReferencia()
 {
     return Documento::obtenerReferencia() +
-            revista + ", " +
-            this->publicacion + ", En Journal: " +
-            (this->journal ? "Si" : "No");
+           revista + ", " +
+           this->publicacion + ", En Journal: " +
+           (this->journal ? "Si" : "No");
 }
 
 Articulo::Articulo()
